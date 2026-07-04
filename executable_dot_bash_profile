@@ -1,0 +1,19 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/ned8800/.lmstudio/bin"
+# End of LM Studio CLI section
+
