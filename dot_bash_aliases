@@ -1,0 +1,4 @@
+#alias python='python3'
+alias la='ls -latr -h'
+# alias docker-compose=docker compose "$@"
+alias proxydnf="sudo all_proxy=socks5h://192.168.49.1:8000 dnf"
