@@ -42,7 +42,7 @@ else
 fi
 
 # Перезапускаем плазму, чтобы лоток и панели обновились
-kquitapp6 plasmashell && sleep 1 && kstart plasmashell && sleep 3
+kquitapp6 plasmashell && sleep 1 && kstart plasmashell && sleep 1
 
 until qdbus-qt6 org.kde.plasmashell /MainApplication org.freedesktop.DBus.Peer.Ping 2>/dev/null ; do
     echo -e "${CYAN} waiting for Plasma to reload... ${NC}"
