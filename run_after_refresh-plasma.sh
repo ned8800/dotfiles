@@ -66,3 +66,4 @@ if ! command -v fzf &> /dev/null; then
 fi
 
 echo -e "${GREEN} KDE settings successfully applied. You are good to go! ${NC}"
+echo -e "${CYAN} old KDE cache is still present. Reload your system to finalize changes. ${NC}"
