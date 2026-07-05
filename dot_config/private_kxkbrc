@@ -1,0 +1,7 @@
+[Layout]
+DisplayNames=,
+LayoutList=us,ru
+Options=grp:alt_shift_toggle,grp:caps_toggle,grp:win_space_toggle,misc:typo,lv3:ralt_switch
+ResetOldOptions=true
+Use=true
+VariantList=,
