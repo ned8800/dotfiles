@@ -8,7 +8,7 @@ NC='\033[0m'     # Reset to normal colors
 
 
 # Перезапуск подсистемы клавиатуры Plasma для применения раскладок клавиатуры
-kquitapp6 kaccess 2>/dev/null; kstart kaccess &
+kquitapp6 kaccess 2>/dev/null && sleep 1 && kstart kaccess 2>/dev/null && sleep 1
 
 
 # применяем настройки виджетов kde
@@ -42,7 +42,14 @@ else
 fi
 
 # Перезапускаем плазму, чтобы лоток и панели обновились
-kquitapp6 plasmashell && sleep 1 && kstart plasmashell && sleep 3 && echo "done reloading plasmashell"
+kquitapp6 plasmashell && sleep 1 && kstart plasmashell && sleep 3
+
+until qdbus-qt6 org.kde.plasmashell /MainApplication org.freedesktop.DBus.Peer.Ping 2>/dev/null ; do
+    echo -e "${CYAN} waiting for Plasma to reload... ${NC}"
+    sleep 0.5
+done
+
+echo -e "${CYAN} Plasma successfully reloaded ${NC}"
 
 
 # применяем  обои
@@ -54,3 +61,4 @@ if command -v plasma-apply-wallpaperimage &> /dev/null; then
     plasma-apply-wallpaperimage "$HOME/Pictures/StarrySur_Mac-3.jpg"
 fi
 
+echo -e "${GREEN} KDE settings successfully applied. You are good to go! ${NC}"
