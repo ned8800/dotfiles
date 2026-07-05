@@ -1,15 +1,9 @@
 [PlasmaViews][Panel 2]
-floating=1
+floating=0
+panelOpacity=1
 shell=org.kde.plasma.desktop
 
 [PlasmaViews][Panel 2][Defaults]
-thickness=44
-
-[PlasmaViews][Panel 29]
-floating=1
-shell=org.kde.plasma.desktop
-
-[PlasmaViews][Panel 29][Defaults]
 thickness=44
 
 [Updates]

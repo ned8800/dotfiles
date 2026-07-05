@@ -27,7 +27,7 @@ fi
 echo -e "${CYAN} applying the KDE saved config files for konsave. ${NC}"
 
 konsave -i "$HOME/dotfiles/kde_plasma_initial_profile_dual_monitor.knsv"
-konsave -i "$HOME/dotfiles/kde_plasma_initial_profile_single_monitor.knsv"
+konsave -i "$HOME/dotfiles/kde_plasma_initial_profile_mono_monitor.knsv"
 
 # Считаем количество подключенных мониторов через xrandr или wlr-randr
 MONITORS=$(xrandr --listmonitors | grep -c "Monitor" || echo 1)
@@ -37,7 +37,7 @@ if [ "$MONITORS" -eq 2 ]; then
     konsave -a kde_plasma_initial_profile_dual_monitor
 else
     echo -e "${CYAN} 1 monitor have been detected. Using a one-screen profile... ${NC}"
-    konsave -a kde_plasma_initial_profile_single_monitor
+    konsave -a kde_plasma_initial_profile_mono_monitor
 fi
 
 # Перезапускаем плазму, чтобы лоток и панели обновились
