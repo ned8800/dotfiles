@@ -42,7 +42,7 @@ else
 fi
 
 # Перезапускаем плазму, чтобы лоток и панели обновились
-kquitapp6 plasmashell && sleep 1 && kstart plasmashell
+kquitapp6 plasmashell && sleep 1 && kstart --window "plasmashell" plasmashell
 
 
 # применяем  обои
