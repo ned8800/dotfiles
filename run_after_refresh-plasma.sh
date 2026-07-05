@@ -14,7 +14,6 @@ kquitapp6 kaccess 2>/dev/null && sleep 1 && kstart kaccess 2>/dev/null && sleep 
 # применяем настройки виджетов kde
 # скачиваем konsave если его нет
 if ! command -v konsave &>/dev/null; then
-
     echo -e "${CYAN} konsave is not installed, installing pipx and konsave to the system. ${NC}"
 
     sudo dnf install pipx -y
@@ -59,6 +58,11 @@ echo -e "${CYAN} applying wallpapers... ${NC}"
 if command -v plasma-apply-wallpaperimage &> /dev/null; then
     # Укажите точный путь к картинке, которая у вас синхронизируется через dotfiles
     plasma-apply-wallpaperimage "$HOME/Pictures/StarrySur_Mac-3.jpg"
+fi
+
+if ! command -v fzf &> /dev/null; then
+    echo -e "${CYAN} fzf is not installed, installing fzf to the system. ${NC}"
+    sudo dnf install fzf -y
 fi
 
 echo -e "${GREEN} KDE settings successfully applied. You are good to go! ${NC}"
